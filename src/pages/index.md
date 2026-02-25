@@ -86,8 +86,11 @@ My experience includes digital media, subscription and consumer platforms, and r
 
 ## Contact
 
-**Serge Roberge**  
-serge@sergeroberge.com  
+**Serge Roberge**
+<!-- Email: parts joined by JS; static HTML never contains the address -->
+<a id="contact-email" href="#">connect [at] sergeroberge [dot] com</a>
+<script>(function(){var a=document.getElementById('contact-email');a.href='mailto:'+['connect','sergeroberge.com'].join('@');}());</script>
+<noscript><em>connect [at] sergeroberge [dot] com</em></noscript>
 
 [LinkedIn](https://www.linkedin.com/in/sergeroberge/)  
 [GitHub — Engineering Systems Notes](https://github.com/sergeshub/engineering-systems)
