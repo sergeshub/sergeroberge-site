@@ -1,7 +1,7 @@
-
+---
 layout: ../layouts/BaseLayout.astro
 title: Serge Roberge
-
+---
 
 # Serge Roberge
 
@@ -15,20 +15,19 @@ My work focuses on stabilizing and scaling revenue-critical technology platforms
 
    
 
-<section id="why-this-matters"></section>
+<section id="operating-experience"></section>
 
-## Context
+## Operating Experience
 
-Technology organizations rarely operate under ideal conditions.
+At several points in my career, I have been responsible for platforms expected to deliver continuous revenue while undergoing structural change the organization could no longer defer.
 
-Legacy platforms, limited capacity, regulatory pressure, and continuously rising delivery expectations create environments where tolerance for failure decreases while demand for change accelerates.
+In one instance, delivery expectations continued to increase while engineering capacity declined and core systems approached operational limits. Replatforming was not viable without unacceptable business risk, yet maintaining the existing trajectory guaranteed instability.
 
-Progress typically does not stall because of technology choices alone. It stalls when execution, ownership, and decision-making drift out of alignment with organizational reality.
+The decision was to shift from replacement-driven modernization to incremental evolution of live production systems. Architectural change, delivery discipline, and ownership boundaries were introduced while the platform remained in continuous operation.
 
-Modernization succeeds only when operating discipline exists first, clear ownership, repeatable delivery practices, and shared understanding of how systems, data, and decisions move through the organization.
+The outcome was not a single transformation event but restored delivery predictability, improved operational stability, and an organization capable of modernizing without interrupting the business that depended on it.
 
-In practice, critical platforms must evolve while remaining in service. The work is less about replacement than about building structures capable of absorbing uncertainty without destabilizing delivery.
-
+The same operating principles apply in growth environments, where increasing delivery velocity must occur without allowing architectural or organizational debt to compound faster than the business can absorb.
    
 
 <section id="how-i-work"></section>
@@ -49,7 +48,7 @@ I value direct communication, constructive tension in service of progress, and s
 
 <section id="selected-mandates"></section>
 
-## Representative Mandates
+## Selected Mandates
 
 ### Stabilizing and Modernizing Revenue-Critical Platforms
 Led modernization of live production platforms supporting national and global audiences while delivery expectations continued to increase under reduced organizational capacity.
@@ -75,13 +74,13 @@ Worked with executive and product leadership to convert strategic objectives int
 
 ## Background
 
-Serge Roberge is a senior technology executive based in Toronto with nearly 30 years of experience leading technology, operations, and platform modernization within complex organizations.
+I am a Toronto-based technology executive with nearly three decades of experience leading engineering organizations, platform modernization, and technology operations within complex environments.
 
-He has led teams spanning software engineering, infrastructure, DevOps, QA, and data across legacy environments through modern cloud and hybrid platforms.
+My work has spanned software engineering, infrastructure, DevOps, QA, and data across legacy, cloud, and hybrid platforms. I am typically brought into situations where delivery expectations exceed the capacity of existing systems or organizational structures, and where technology decisions carry material business risk.
 
-His work typically sits at the intersection of execution, risk, and governance, where technology decisions carry material business impact. Serge is frequently trusted with mandates requiring system stabilization, organizational alignment, and the translation of strategy into durable operating capability.
+I focus on translating strategy into durable operating capability, stabilizing critical platforms, aligning teams around clear ownership and execution models, and enabling organizations to modernize while remaining fully operational.
 
-His experience spans digital media, subscription and consumer platforms, regulated environments, and organizations operating at scale under continuous delivery and availability constraints.
+My experience includes digital media, subscription and consumer platforms, and regulated environments operating under continuous delivery and availability constraints.
 
    
 
@@ -92,5 +91,5 @@ His experience spans digital media, subscription and consumer platforms, regulat
 **Serge Roberge**  
 serge@sergeroberge.com  
 
-[LinkedIn](https://www.linkedin.com/)  
+[LinkedIn](https://www.linkedin.com/in/sergeroberge/)  
 [GitHub — Engineering Systems Notes](https://github.com/sergeshub/engineering-systems)
