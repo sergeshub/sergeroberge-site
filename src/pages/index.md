@@ -6,14 +6,12 @@ title: Serge Roberge
 # Serge Roberge
 
 Technology Executive — VP Engineering / Head of Technology Leadership
-
     
 
 ## I lead engineering organizations through periods where delivery expectations outpace the systems, structure, and operating models required to support them safely.
 
 My work focuses on stabilizing and scaling revenue-critical technology platforms while enabling continuous modernization without operational disruption.
 
-   
 
 <section id="operating-experience"></section>
 
