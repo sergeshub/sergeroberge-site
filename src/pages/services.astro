@@ -2,7 +2,7 @@
 import BaseLayout from '../layouts/BaseLayout.astro';
 ---
 
-<BaseLayout title="Advisory Services — Serge Roberge">
+<BaseLayout title="Advisory Services — Serge Roberge" canonical="https://sergeroberge.com/services">
   <style is:global>
     /* Override index page body layout for this page */
     body {
@@ -488,16 +488,21 @@ import BaseLayout from '../layouts/BaseLayout.astro';
         the most efficient path is a direct conversation. Thirty minutes is usually enough
         to know whether there is a fit worth exploring.
       </p>
-      <!-- Email: parts joined by JS; static HTML never contains the address -->
-      <a id="services-cta-email" href="#">connect&#64;sergeroberge.com</a>
-      <script>(function(){var a=document.getElementById('services-cta-email');a.href='mailto:'+['connect','sergeroberge.com'].join('@');}());</script>
+      <span id="services-email"></span>
+      <script>
+        (function(){
+          var u = 'connect', d = 'sergeroberge.com';
+          var el = document.getElementById('services-email');
+          if (el) el.innerHTML = '<a href="mailto:'+u+'@'+d+'" style="font-family:var(--mono);font-size:0.85rem;color:var(--bg);text-decoration:none;letter-spacing:0.04em;border-bottom:1px solid #6b6b62;padding-bottom:1px;">'+u+'@'+d+'</a>';
+        }());
+      </script>
       <noscript><em>connect [at] sergeroberge [dot] com</em></noscript>
     </div>
 
     <nav class="foot-nav">
       <a href="/">← Back to main</a>
       <a href="https://www.linkedin.com/in/sergeroberge/" target="_blank" rel="noopener">LinkedIn</a>
-      <a href="https://github.com/sergeshub" target="_blank" rel="noopener">GitHub</a>
+      <a href="https://github.com/sergeshub/engineering-systems" target="_blank" rel="noopener">GitHub</a>
     </nav>
 
   </div>

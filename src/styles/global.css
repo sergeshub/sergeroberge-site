@@ -32,9 +32,6 @@ body {
   font-weight: 300;
   line-height: 1.75;
   -webkit-font-smoothing: antialiased;
-  /* Index page column layout — overridden per-page where needed */
-  max-width: 720px;
-  margin: 80px auto;
 }
 
 h1 {

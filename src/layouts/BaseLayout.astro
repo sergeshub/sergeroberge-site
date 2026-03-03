@@ -1,7 +1,8 @@
 ---
 import "../styles/global.css";
-const { title } = Astro.props;
+const { title, canonical } = Astro.props;
 const siteUrl = "https://sergeroberge.com";
+const canonicalUrl = canonical ?? siteUrl;
 const ogTitle = "Serge Roberge — Technology Executive";
 const ogDescription =
   "Engineering leadership focused on stabilizing and scaling revenue-critical platforms while enabling continuous modernization.";
@@ -14,6 +15,29 @@ const ogImage = `${siteUrl}/og-image.jpg`;
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title}</title>
+    <meta name="description" content="Toronto-based technology executive. Fractional CTO, AI adoption advisory, and legacy platform modernization for mid-market companies." />
+    <link rel="canonical" href={canonicalUrl} />
+    <meta name="robots" content="index, follow" />
+    <meta name="author" content="Serge Roberge" />
+    <meta name="geo.region" content="CA-ON" />
+    <meta name="geo.placename" content="Toronto" />
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Person",
+      "name": "Serge Roberge",
+      "jobTitle": "Technology Executive",
+      "url": "https://sergeroberge.com",
+      "address": {
+        "@type": "PostalAddress",
+        "addressLocality": "Toronto",
+        "addressRegion": "ON",
+        "addressCountry": "CA"
+      },
+      "sameAs": [
+        "https://www.linkedin.com/in/sergeroberge/",
+        "https://github.com/sergeshub"
+      ]
+    })} />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />

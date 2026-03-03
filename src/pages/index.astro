@@ -1,0 +1,85 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Serge Roberge">
+  <style>
+    .index-wrap {
+      max-width: 720px;
+      margin: 80px auto;
+      padding: 0 1.5rem;
+    }
+
+    .mandates-bridge {
+      margin-top: 2.5rem;
+      font-size: 1rem;
+      color: var(--ink-mid);
+    }
+
+    .mandates-bridge a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .mandates-bridge a:hover {
+      text-decoration: underline;
+    }
+  </style>
+
+  <div class="index-wrap">
+    <nav class="site-nav">
+      <a href="/services">Advisory Services</a>
+      <a href="#contact">Contact</a>
+    </nav>
+
+    <h1>Serge Roberge</h1>
+    <p>Technology Executive — VP Engineering / Head of Technology Leadership</p>
+
+    <h2>I lead engineering organizations through periods where delivery expectations outpace the systems, structure, and operating models required to support them safely.</h2>
+    <p>My work focuses on stabilizing and scaling revenue-critical technology platforms while enabling continuous modernization without operational disruption.</p>
+
+    <section id="operating-experience"></section>
+
+    <h2>Operating Experience</h2>
+    <p>At several points in my career, I have been responsible for platforms expected to deliver continuous revenue while undergoing structural change the organization could no longer defer.</p>
+    <p>In one instance, delivery expectations continued to increase while engineering capacity declined and core systems approached operational limits. Replatforming was not viable without unacceptable business risk, yet maintaining the existing trajectory guaranteed instability.</p>
+    <p>The decision was to shift from replacement-driven modernization to incremental evolution of live production systems. Architectural change, delivery discipline, and ownership boundaries were introduced while the platform remained in continuous operation.</p>
+    <p>The outcome was not a single transformation event but restored delivery predictability, improved operational stability, and an organization capable of modernizing without interrupting the business that depended on it.</p>
+    <p>The same operating principles apply in growth environments, where increasing delivery velocity must occur without allowing architectural or organizational debt to compound faster than the business can absorb.</p>
+
+    <section id="how-i-work"></section>
+
+    <h2>Approach</h2>
+    <p>I establish direction and constraints, then give teams autonomy to execute within clearly understood boundaries.</p>
+    <p>Decisions are expected to be deliberate, documented, and revisited as conditions change. Priority is placed on fundamentals, ownership clarity, trusted data, repeatable processes, and a single operational source of truth, because these determine whether organizations scale sustainably.</p>
+    <p>Modernization and experimentation are necessary, but they must occur within systems capable of supporting continuous change without introducing operational instability.</p>
+    <p>Much of my work involves making consequential decisions under uncertainty, evolving live systems without interrupting business operations, and maintaining execution focus when organizational pressure increases.</p>
+    <p>I value direct communication, constructive tension in service of progress, and shared accountability for outcomes. Engineering organizations perform best when expectations are clear, standards are consistent, and teams understand the purpose behind the work.</p>
+
+    <p class="mandates-bridge">
+      I currently take a small number of advisory engagements across AI adoption strategy, fractional CTO, technical health assessment, and legacy platform modernization. <a href="/services">Details on Advisory Services →</a>
+    </p>
+
+    <section id="background"></section>
+
+    <h2>Background</h2>
+    <p>I am a Toronto-based technology executive with nearly three decades of experience leading engineering organizations, platform modernization, and technology operations within complex environments.</p>
+    <p>My work has spanned software engineering, infrastructure, DevOps, QA, and data across legacy, cloud, and hybrid platforms. I am typically brought into situations where delivery expectations exceed the capacity of existing systems or organizational structures, and where technology decisions carry material business risk.</p>
+    <p>I focus on translating strategy into durable operating capability, stabilizing critical platforms, aligning teams around clear ownership and execution models, and enabling organizations to modernize while remaining fully operational.</p>
+    <p>My experience includes digital media, subscription and consumer platforms, and regulated environments operating under continuous delivery and availability constraints.</p>
+
+    <section id="contact"></section>
+
+    <h2>Contact</h2>
+    <p class="contact-links">
+      <span id="email-display"></span> · <a href="/services">Advisory Services</a> · <a href="https://www.linkedin.com/in/sergeroberge/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/sergeshub/engineering-systems" target="_blank" rel="noopener">GitHub</a>
+    </p>
+  </div>
+
+  <script>
+    const u = 'connect';
+    const d = 'sergeroberge.com';
+    const el = document.getElementById('email-display');
+    if (el) el.innerHTML = '<a href="mailto:' + u + '@' + d + '">' + u + '@' + d + '</a>';
+  </script>
+</BaseLayout>
