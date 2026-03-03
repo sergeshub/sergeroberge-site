@@ -91,9 +91,12 @@ My experience includes digital media, subscription and consumer platforms, and r
 
 ## Contact
 
-<!-- Email: assembled by JS; static HTML never contains the bare address -->
 <p class="contact-links">
   <span id="email-display"></span> · <a href="/services">Advisory Services</a> · <a href="https://www.linkedin.com/in/sergeroberge/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/sergeshub/engineering-systems" target="_blank" rel="noopener">GitHub</a>
 </p>
-<script>(function(){var u='connect',d='sergeroberge.com',el=document.getElementById('email-display');el.innerHTML='<a href="mailto:'+u+'@'+d+'">'+u+'@'+d+'</a>';}());</script>
-<noscript><p class="contact-links"><em>connect [at] sergeroberge [dot] com</em> · <a href="/services">Advisory Services</a> · <a href="https://www.linkedin.com/in/sergeroberge/">LinkedIn</a> · <a href="https://github.com/sergeshub/engineering-systems">GitHub</a></p></noscript>
+<script>
+  const u = 'connect';
+  const d = 'sergeroberge.com';
+  const el = document.getElementById('email-display');
+  el.innerHTML = '<a href="mailto:' + u + '@' + d + '">' + u + '@' + d + '</a>';
+</script>
