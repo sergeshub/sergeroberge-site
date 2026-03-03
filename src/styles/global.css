@@ -101,3 +101,13 @@ section {
   color: var(--ink);
   text-decoration: underline;
 }
+
+.headshot {
+  width: 96px;
+  height: 96px;
+  border-radius: 50%;
+  object-fit: cover;
+  object-position: center top;
+  margin: 1.5rem 0;
+  filter: grayscale(20%);
+}
