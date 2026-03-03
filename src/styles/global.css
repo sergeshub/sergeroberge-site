@@ -25,3 +25,38 @@ section {
 html {
   scroll-behavior: smooth;
 }
+
+.site-nav {
+  margin-bottom: 2.5rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #ddd;
+  display: flex;
+  gap: 1.5rem;
+  font-size: 0.82rem;
+}
+
+.site-nav a {
+  color: #777;
+  text-decoration: none;
+}
+
+.site-nav a:hover {
+  color: #222;
+}
+
+.contact-links {
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.8;
+  margin-top: 0.25rem;
+}
+
+.contact-links a {
+  color: #555;
+  text-decoration: none;
+}
+
+.contact-links a:hover {
+  color: #222;
+  text-decoration: underline;
+}

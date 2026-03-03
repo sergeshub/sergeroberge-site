@@ -3,6 +3,11 @@ layout: ../layouts/BaseLayout.astro
 title: Serge Roberge
 ---
 
+<nav class="site-nav">
+  <a href="/services">Advisory Services</a>
+  <a href="#contact">Contact</a>
+</nav>
+
 # Serge Roberge
 
 Technology Executive — VP Engineering / Head of Technology Leadership
@@ -86,12 +91,9 @@ My experience includes digital media, subscription and consumer platforms, and r
 
 ## Contact
 
-**Serge Roberge**
-<!-- Email: parts joined by JS; static HTML never contains the address -->
-<a id="contact-email" href="#">connect [at] sergeroberge [dot] com</a>
-<script>(function(){var a=document.getElementById('contact-email');a.href='mailto:'+['connect','sergeroberge.com'].join('@');}());</script>
-<noscript><em>connect [at] sergeroberge [dot] com</em></noscript>
-
-[Advisory Services](/services)
-[LinkedIn](https://www.linkedin.com/in/sergeroberge/)
-[GitHub — Engineering Systems Notes](https://github.com/sergeshub/engineering-systems)
+<!-- Email: assembled by JS; static HTML never contains the bare address -->
+<p class="contact-links">
+  <span id="email-display"></span> · <a href="/services">Advisory Services</a> · <a href="https://www.linkedin.com/in/sergeroberge/" target="_blank" rel="noopener">LinkedIn</a> · <a href="https://github.com/sergeshub/engineering-systems" target="_blank" rel="noopener">GitHub</a>
+</p>
+<script>(function(){var u='connect',d='sergeroberge.com',el=document.getElementById('email-display');el.innerHTML='<a href="mailto:'+u+'@'+d+'">'+u+'@'+d+'</a>';}());</script>
+<noscript><p class="contact-links"><em>connect [at] sergeroberge [dot] com</em> · <a href="/services">Advisory Services</a> · <a href="https://www.linkedin.com/in/sergeroberge/">LinkedIn</a> · <a href="https://github.com/sergeshub/engineering-systems">GitHub</a></p></noscript>
