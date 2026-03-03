@@ -92,5 +92,6 @@ My experience includes digital media, subscription and consumer platforms, and r
 <script>(function(){var a=document.getElementById('contact-email');a.href='mailto:'+['connect','sergeroberge.com'].join('@');}());</script>
 <noscript><em>connect [at] sergeroberge [dot] com</em></noscript>
 
-[LinkedIn](https://www.linkedin.com/in/sergeroberge/)  
+[Advisory Services](/services)
+[LinkedIn](https://www.linkedin.com/in/sergeroberge/)
 [GitHub — Engineering Systems Notes](https://github.com/sergeshub/engineering-systems)

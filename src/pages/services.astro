@@ -1,0 +1,536 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+
+<BaseLayout title="Advisory Services — Serge Roberge">
+  <Fragment slot="head">
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500&family=IBM+Plex+Mono:wght@400;500&family=IBM+Plex+Sans:ital,wght@0,300;0,400;0,500;1,300&display=swap" rel="stylesheet" />
+  </Fragment>
+
+  <style is:global>
+    :root {
+      --ink:       #1a1a18;
+      --ink-mid:   #3d3d38;
+      --ink-soft:  #6b6b62;
+      --rule:      #d4d0c4;
+      --rule-dark: #a09c8e;
+      --bg:        #f5f3ee;
+      --bg-warm:   #eeeae0;
+      --accent:    #2a4a7f;
+      --accent-lt: #d6e0f0;
+      --mono: 'IBM Plex Mono', monospace;
+      --serif: 'Playfair Display', Georgia, serif;
+      --sans: 'IBM Plex Sans', system-ui, sans-serif;
+    }
+
+    /* Reset global.css body/element styles for this page */
+    body {
+      font-family: var(--sans);
+      font-size: 16px;
+      max-width: none;
+      margin: 0;
+      line-height: 1.75;
+      color: var(--ink);
+      background: var(--bg);
+      font-weight: 300;
+      -webkit-font-smoothing: antialiased;
+    }
+
+    h1, h2 {
+      font-weight: 400;
+      margin-top: 0;
+      margin-bottom: 0;
+    }
+
+    section {
+      margin-top: 0;
+    }
+
+    /* ── Layout ── */
+    .page {
+      max-width: 780px;
+      margin: 0 auto;
+      padding: 4rem 2rem 6rem;
+    }
+
+    /* ── Nav breadcrumb ── */
+    .breadcrumb {
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+      margin-bottom: 3.5rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .breadcrumb a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+    .breadcrumb a:hover { text-decoration: underline; }
+    .breadcrumb span { color: var(--rule-dark); }
+
+    /* ── Page header ── */
+    .page-header {
+      border-top: 2px solid var(--ink);
+      padding-top: 2rem;
+      margin-bottom: 3rem;
+    }
+    .page-header h1 {
+      font-family: var(--serif);
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      line-height: 1.2;
+      color: var(--ink);
+      margin-bottom: 1.2rem;
+    }
+    .page-header .lede {
+      font-size: 1.05rem;
+      color: var(--ink-mid);
+      max-width: 620px;
+      line-height: 1.8;
+      font-weight: 300;
+    }
+
+    /* ── Section divider ── */
+    .section-label {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      letter-spacing: 0.12em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 2rem;
+      display: flex;
+      align-items: center;
+      gap: 1rem;
+    }
+    .section-label::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--rule);
+    }
+
+    /* ── Service card ── */
+    .service {
+      margin-bottom: 3.5rem;
+      padding-bottom: 3.5rem;
+      border-bottom: 1px solid var(--rule);
+    }
+    .service:last-of-type {
+      border-bottom: none;
+    }
+
+    .service-header {
+      display: flex;
+      align-items: baseline;
+      gap: 1rem;
+      margin-bottom: 0.5rem;
+      flex-wrap: wrap;
+    }
+
+    .service-num {
+      font-family: var(--mono);
+      font-size: 0.7rem;
+      color: var(--accent);
+      letter-spacing: 0.06em;
+      flex-shrink: 0;
+      margin-top: 0.15rem;
+    }
+
+    .service h2 {
+      font-family: var(--serif);
+      font-size: 1.45rem;
+      color: var(--ink);
+      line-height: 1.25;
+    }
+
+    .service-tag {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      color: var(--accent);
+      background: var(--accent-lt);
+      padding: 0.2em 0.6em;
+      border-radius: 2px;
+      margin-left: auto;
+      white-space: nowrap;
+      align-self: center;
+    }
+
+    .service-body {
+      margin-top: 1rem;
+    }
+
+    .service-body p {
+      color: var(--ink-mid);
+      font-size: 0.97rem;
+      margin-bottom: 1rem;
+      max-width: 640px;
+    }
+
+    .service-body p strong {
+      font-weight: 500;
+      color: var(--ink);
+    }
+
+    .detail-row {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5rem 2rem;
+      margin-top: 1.5rem;
+    }
+
+    @media (max-width: 560px) {
+      .detail-row { grid-template-columns: 1fr; }
+    }
+
+    .detail-block dt {
+      font-family: var(--mono);
+      font-size: 0.68rem;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-soft);
+      margin-bottom: 0.35rem;
+    }
+
+    .detail-block dd {
+      font-size: 0.93rem;
+      color: var(--ink-mid);
+      font-weight: 300;
+      line-height: 1.6;
+    }
+
+    /* ── Honest caveat block ── */
+    .caveat {
+      margin-top: 1.5rem;
+      padding: 1rem 1.2rem;
+      border-left: 3px solid var(--rule-dark);
+      background: var(--bg-warm);
+    }
+    .caveat p {
+      font-size: 0.88rem !important;
+      color: var(--ink-soft) !important;
+      font-style: italic;
+      margin: 0 !important;
+    }
+
+    /* ── How I work section ── */
+    .how-section {
+      margin-top: 4rem;
+      padding-top: 3rem;
+      border-top: 2px solid var(--ink);
+    }
+
+    .how-section h2 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      margin-bottom: 1.2rem;
+    }
+
+    .how-section p {
+      color: var(--ink-mid);
+      font-size: 0.97rem;
+      max-width: 640px;
+      margin-bottom: 1rem;
+    }
+
+    /* ── Contact CTA ── */
+    .cta {
+      margin-top: 4rem;
+      padding: 2.5rem;
+      background: var(--ink);
+      color: var(--bg);
+    }
+
+    .cta h2 {
+      font-family: var(--serif);
+      font-size: 1.5rem;
+      margin-bottom: 0.8rem;
+      color: var(--bg);
+    }
+
+    .cta p {
+      font-size: 0.95rem;
+      color: #c8c4b8;
+      max-width: 520px;
+      margin-bottom: 1.5rem;
+      line-height: 1.75;
+    }
+
+    .cta a {
+      font-family: var(--mono);
+      font-size: 0.85rem;
+      color: var(--bg);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+      border-bottom: 1px solid #6b6b62;
+      padding-bottom: 1px;
+      transition: border-color 0.2s;
+    }
+    .cta a:hover { border-color: var(--bg); }
+
+    /* ── Footer nav ── */
+    .foot-nav {
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--rule);
+      font-family: var(--mono);
+      font-size: 0.72rem;
+      color: var(--ink-soft);
+      display: flex;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+    }
+    .foot-nav a {
+      color: var(--accent);
+      text-decoration: none;
+      letter-spacing: 0.04em;
+    }
+    .foot-nav a:hover { text-decoration: underline; }
+  </style>
+
+  <div class="page">
+
+    <nav class="breadcrumb">
+      <a href="/">Serge Roberge</a>
+      <span>/</span>
+      Advisory Services
+    </nav>
+
+    <header class="page-header">
+      <h1>Advisory &amp; Fractional CTO Services</h1>
+      <p class="lede">
+        I work with founders, CEOs, and boards who need a senior technical mind without a full-time hire —
+        or who need someone to walk into a difficult situation and tell them the truth about what's actually happening.
+      </p>
+    </header>
+
+    <!-- ── Services ── -->
+    <div class="section-label">What I offer</div>
+
+    <!-- 01 -->
+    <div class="service">
+      <div class="service-header">
+        <span class="service-num">01</span>
+        <h2>AI Adoption &amp; Governance Advisory</h2>
+        <span class="service-tag">High demand</span>
+      </div>
+      <div class="service-body">
+        <p>
+          Most companies are being asked to have an AI strategy before they have any basis for one.
+          The result is either paralysis, or rushed adoption that creates compliance exposure and
+          organizational noise without meaningful return.
+        </p>
+        <p>
+          I help leadership teams cut through the hype and build a structured, honest answer to
+          three questions: <strong>where does AI actually create leverage in your specific business,
+          what governance do you need before you start, and in what order do you move?</strong>
+        </p>
+        <p>
+          This work draws on direct experience integrating AI-assisted engineering practices into
+          a live production organization, formal doctoral research in generative AI, and regulatory
+          compliance work across GDPR, PIPEDA, CCPA, and PCI-DSS environments.
+        </p>
+
+        <div class="detail-row">
+          <dl class="detail-block">
+            <dt>Who this is for</dt>
+            <dd>CEOs, boards, and leadership teams at companies between $5M–$200M revenue who need a credible, vendor-neutral AI roadmap — not a product pitch.</dd>
+          </dl>
+          <dl class="detail-block">
+            <dt>What you get</dt>
+            <dd>A written assessment of where AI creates real value in your organization, a governance framework appropriate to your risk and regulatory context, and a sequenced adoption roadmap.</dd>
+          </dl>
+          <dl class="detail-block">
+            <dt>Engagement structure</dt>
+            <dd>Fixed-fee assessment: 3–4 weeks. Ongoing advisory retainer available for companies in active adoption.</dd>
+          </dl>
+          <dl class="detail-block">
+            <dt>Investment</dt>
+            <dd>Assessment from $8,000. Retainer from $3,000/month.</dd>
+          </dl>
+        </div>
+
+        <div class="caveat">
+          <p>I will tell you when AI is not the right answer for a given problem. If you're looking for someone to validate a decision already made, I'm not the right fit.</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- 02 -->
+    <div class="service">
+      <div class="service-header">
+        <span class="service-num">02</span>
+        <h2>Fractional CTO</h2>
+        <span class="service-tag">Ongoing</span>
+      </div>
+      <div class="service-body">
+        <p>
+          Companies between 20 and 150 people often have a real engineering organization but no one
+          in the executive seat who can translate between technical reality and business decisions.
+          A technical founder gets pulled into delivery. A VP of Engineering manages up rather than
+          leading strategy. The board has no one to ask hard questions of.
+        </p>
+        <p>
+          I serve as the senior technical voice in your leadership team on a defined, part-time basis —
+          attending key meetings, owning architecture and tooling direction, making vendor and hiring
+          decisions alongside you, and giving your CEO a thinking partner for consequential technical calls.
+        </p>
+
+        <div class="detail-row">
+          <dl class="detail-block">
+            <dt>Who this is for</dt>
+            <dd>Founders and CEOs who need CTO-level judgment without a full-time hire. Also appropriate post-CTO departure as a stable bridge during a search.</dd>
+          </dl>
+          <dl class="detail-block">
+            <dt>What I don't do</dt>
+            <dd>Write production code or manage individual contributors day-to-day. I set direction, hold the function, and make the decisions that require executive judgment.</dd>
+          </dl>
+          <dl class="detail-block">
+            <dt>Engagement structure</dt>
+            <dd>Typically two days per week. Minimum three-month engagement. I take a maximum of two fractional clients at a time.</dd>
+          </dl>
+          <dl class="detail-block">
+            <dt>Investment</dt>
+            <dd>From $4,500/month for two days per week.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <!-- 03 -->
+    <div class="service">
+      <div class="service-header">
+        <span class="service-num">03</span>
+        <h2>Technical Health Assessment</h2>
+        <span class="service-tag">Fixed fee</span>
+      </div>
+      <div class="service-body">
+        <p>
+          Something is wrong with the engineering organization but you can't diagnose it clearly.
+          Deadlines keep slipping. A CTO left under difficult circumstances. An offshore engagement
+          didn't deliver. The board is asking questions you can't confidently answer.
+        </p>
+        <p>
+          I come in, spend two to three weeks talking to the team and examining systems and practices,
+          and give you a clear written picture of what's actually happening — not a polished consulting
+          deck, but a direct assessment you can act on.
+        </p>
+
+        <div class="detail-row">
+          <dl class="detail-block">
+            <dt>What I examine</dt>
+            <dd>Architecture and technical debt posture, delivery practices and team structure, tooling and operational health, and the gap between what engineering says it can do and what the business actually needs.</dd>
+          </dl>
+          <dl class="detail-block">
+            <dt>What you get</dt>
+            <dd>A written assessment: what is actually broken, what is at risk, and a prioritized sequence for addressing it. Something you can share with your board or use to make hiring decisions with clarity.</dd>
+          </dl>
+          <dl class="detail-block">
+            <dt>Engagement structure</dt>
+            <dd>Two to three weeks. Fixed scope, fixed fee. Clean start and end.</dd>
+          </dl>
+          <dl class="detail-block">
+            <dt>Investment</dt>
+            <dd>$8,000–$12,000 depending on organizational complexity.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <!-- 04 -->
+    <div class="service">
+      <div class="service-header">
+        <span class="service-num">04</span>
+        <h2>Legacy Platform Modernization Advisory</h2>
+      </div>
+      <div class="service-body">
+        <p>
+          The platform is old. Everyone knows it needs to change. But a full rewrite would take years
+          and carries unacceptable business risk, and the people advocating for it have never had to
+          keep revenue running while rebuilding what it runs on.
+        </p>
+        <p>
+          I have done this. Not as a consultant observing from the outside, but as the person
+          accountable for the outcome — sequencing the decomposition of a 20-year production platform
+          while delivery continued and revenue was protected throughout.
+        </p>
+        <p>
+          <strong>The core skill is sequencing.</strong> Most modernization efforts fail not because
+          the strategy is wrong, but because the order is. I help you design a migration path that
+          addresses the highest-risk dependencies first and keeps the business operational at every stage.
+        </p>
+
+        <div class="detail-row">
+          <dl class="detail-block">
+            <dt>Who this is for</dt>
+            <dd>CTOs, VPs of Engineering, and CEOs at companies with meaningful legacy platform debt who need a credible path forward that doesn't require stopping the business to fix the foundation.</dd>
+          </dl>
+          <dl class="detail-block">
+            <dt>Engagement structure</dt>
+            <dd>Initial sequencing assessment (3–4 weeks), optionally followed by an ongoing advisory retainer during the execution phase.</dd>
+          </dl>
+          <dl class="detail-block">
+            <dt>Investment</dt>
+            <dd>Initial assessment from $10,000. Ongoing advisory retainer scoped to engagement.</dd>
+          </dl>
+          <dl class="detail-block">
+            <dt>Technology context</dt>
+            <dd>Direct experience with monolith decomposition, modular monolith architecture, microservices, Kubernetes/Rancher, headless CMS migration, and cloud-native hybrid transitions.</dd>
+          </dl>
+        </div>
+      </div>
+    </div>
+
+    <!-- ── How I work ── -->
+    <div class="how-section">
+      <div class="section-label">How I work</div>
+      <h2>A few things worth knowing before we talk</h2>
+      <p>
+        I am direct. I will tell you what I observe, including things that are uncomfortable to hear.
+        If the problem is in leadership rather than the engineering team, I will say so. This is not
+        a character flaw in either of us — it is what you are paying for.
+      </p>
+      <p>
+        I do not produce frameworks. I produce assessments, decisions, and sequenced plans based on
+        the specific situation in front of me. Two companies with the same problem description rarely
+        have the same problem.
+      </p>
+      <p>
+        I work with a small number of clients at a time. This is intentional. The work requires
+        enough familiarity with your organization to have an informed opinion, and that takes time
+        and attention I cannot provide if I am spread too thin.
+      </p>
+      <p>
+        I am based in Toronto and work with organizations across Canada and the United States.
+        Most engagements are conducted primarily remotely with defined on-site requirements where relevant.
+      </p>
+    </div>
+
+    <!-- ── CTA ── -->
+    <div class="cta">
+      <h2>Start with a conversation</h2>
+      <p>
+        If you are trying to figure out whether any of this is relevant to your situation,
+        the most efficient path is a direct conversation. Thirty minutes is usually enough
+        to know whether there is a fit worth exploring.
+      </p>
+      <!-- Email: parts joined by JS; static HTML never contains the address -->
+      <a id="services-cta-email" href="#">connect&#64;sergeroberge.com</a>
+      <script>(function(){var a=document.getElementById('services-cta-email');a.href='mailto:'+['connect','sergeroberge.com'].join('@');}());</script>
+      <noscript><em>connect [at] sergeroberge [dot] com</em></noscript>
+    </div>
+
+    <nav class="foot-nav">
+      <a href="/">← Back to main</a>
+      <a href="https://www.linkedin.com/in/sergeroberge/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://github.com/sergeshub" target="_blank" rel="noopener">GitHub</a>
+    </nav>
+
+  </div>
+</BaseLayout>
